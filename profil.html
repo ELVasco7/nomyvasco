@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Dimas Aji Nugraha</title>
+    <style>
+        body {
+            font-family: serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .profile-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+
+        .profile-container h1 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+            text-transform: uppercase;
+            color: #f72585;
+        }
+
+        .profile-container p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .profile-button {
+            padding: 6px 12px;
+            font-size: 0.9em;
+            color: #fff;
+            background: #7209b7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            font-family: serif;
+        }
+
+        .profile-button:hover {
+            background: #560bad;
+        }
+
+        .profile-button:active::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .profile-button:active {
+            background: #3a0ca3;
+            color: #fff;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(calc(-50vw + 100%));
+                opacity: 0;
+            }
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 15vh;
+            background: url('your-photo-url.jpg') center/cover no-repeat;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f72585;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            font-family: serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>NOMY VASCO PROJECT</p>
+    </header>
+    <div class="particles">
+        <!-- Particle elements dynamically generated with JS -->
+    </div>
+    <div class="profile-container">
+        <h1>EL-Vasco</h1>
+        <p>ini adalah mod yang saya bikin dan saya share kepada kalian dengan gratis kalian bisa mendukung saya dengan memberikan dukungan lewat apa saja semua saya terima.</p>
+        <div class="button-container">
+            <a href="https://discord.gg/HWknz8ZP" class="profile-button" target="_blank">DISCORD SERVER</a>
+            <a href="https://www.google.com" class="profile-button" target="_blank">DOWNLOAD</a>
+            <a href="https://www.youtube.com/@nomy7900" class="profile-button" target="_blank">YOUTUBE CHANNEL</a>
+            <a href="https://saweria.co/DimzNomy" class="profile-button" target="_blank">BERI DUKUNGAN</a>
+        </div>
+    </div>
+
+    <script>
+        const particlesContainer = document.querySelector('.particles');
+        for (let i = 0; i < 150; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.animationDuration = 4 + Math.random() * 2 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
